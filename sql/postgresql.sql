@@ -14,7 +14,7 @@ tableColumns AS (
    SELECT t.table_schema,
           t.table_name,
           c.column_name,
-          COALESCE(tk.column_key,'') AS column_pk,
+          COALESCE(tk.column_key::TEXT,'') AS column_pk,
           CASE
              WHEN data_type IN ('USER-DEFINED',
                                 'timestamp without time zone',
